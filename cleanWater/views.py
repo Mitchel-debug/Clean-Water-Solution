@@ -15,8 +15,10 @@ stripe.api_key = "sk_test_51LyJ17BSE8CSa3qNLumX2XXGcoidGdc3sypq7xVE8sLhD2e8Oa7NA
 
 def index(request):
     list = (0, 1, 2)
+    artricle = Articles.objects.all().order_by("-id")[:3]
     return render(request, "cleanWater/index.html", {
-        "List": list
+        "List": list,
+        "art4": artricle
     })
     
 def charge(request):
