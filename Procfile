@@ -1,0 +1,1 @@
+web: gunicorn Waterways.wsgi --log-file -
