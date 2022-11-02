@@ -1,0 +1,75 @@
+{% extends "cleanWater/layout.html" %}
+{% block body %}
+
+{% load static %}
+<h2 id="request-page">Report Unhealthy Conditions</h2>
+<div>
+    Use this page to report what appears to you as a possible violation of environmental laws and regulations. Information you submit will be forwarded to EPA environmental enforcement personnel or to the appropriate regulatory authority. More Information. Please provide as much information as you can in the form below
+</div>
+<div class="request_form">
+    <form action="{% url 'report' %}" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+            <label for="address" >Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address or 'Unknown'" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="Enter City or 'Unknown'" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" name="state" placeholder="Enter State or 'Unknown'" required>
+        </div>
+        <div class="form-group">
+            <label for="code" name="address">Zip code</label>
+            <input type="number" class="form-control" id="code" name="code" placeholder="Enter Zip or 'Unknown'" required>
+        </div>
+
+        <hr>
+        <h4>
+            Describe the Problem
+        </h4>
+        <div class="from-group">
+            <p>Is this problem still occuring</p>
+            <input type="radio" id="Yes" name="Yes" value="Yes">
+            <label for="Yes">Yes</label><br>
+            <input type="radio" id="No" name="No" value="No">
+            <label for="No">No</label><br>
+        </div>
+        <div class="form-group">
+            <label for="birthday">Date of Incident</label>
+            <br>
+            <input type="date" id="Date" name="Date">
+        </div>
+
+        <div class="from-group">
+            <p>Is this an emergency</p>
+            <input type="radio" id="Yes2" name="Yes2" value="Yes">
+            <label for="Yes2">Yes</label><br>
+            <input type="radio" id="No2" name="No2" value="No">
+            <label for="No2">No</label><br>
+        </div>
+        
+        <div class="form-group">
+            <p>Affected Subjects</p>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Land">
+            <label for="vehicle1"> Land</label><br>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Air">
+            <label for="vehicle2"> Air</label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Water">
+            <label for="vehicle3"> Water</label><br>
+        </div>
+
+        <div class="form-group">
+            <p>Problem Description</p>
+            <textarea id="desc" name="desc" rows="4" cols="80"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>
+{% endblock %}

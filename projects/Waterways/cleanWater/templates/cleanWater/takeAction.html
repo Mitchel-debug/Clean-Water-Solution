@@ -1,0 +1,45 @@
+{% extends "cleanWater/layout.html" %}
+{% block body %}
+
+{% load static %}
+<script src="https://js.stripe.com/v3/"></script>
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn">DONATE</button>
+
+        </div>
+        <form action="{% url 'charge' %}" class="input-group" id="payment-form" method="post">
+            {% csrf_token %}
+            <div class="form-field-6">
+                <input type="email" class="input-field" name="email" placeholder="Email..." required>
+            </div>
+            <div class="form-field-6">
+                <input type="text" class="input-field" name="nickname" placeholder="Nickname..." required>
+            </div>
+            <div class="form-field-6">
+                <input type="number" class="input-field" name="amount" id="amount" placeholder="Enter Amount" required>
+            </div>
+            <div class="form-row">
+                <label for="card-element">
+                    Credit or debit card
+                </label>
+                <div id="card-element">
+
+                </div>
+                <div id="card-errors" role="alert"></div>
+            </div>
+            <input type="submit" id="butt12" value="Submit Payment">
+        </form>
+    </div>
+    <div class="text2">
+        <h4>100% of your money brings clean water to people in need</h4>
+        <p>Join us in shaping the future and making clean water a part of your lasting legacy. That’s nearly 1 in 10 people worldwide. Or, twice the population of the United States. The majority live in isolated rural areas and spend hours every day walking to collect water for their family. Not only does walking for water keep children out of school or take up time that parents could be using to earn money, but the water often carries diseases that can make everyone sick.</p>
+    </div>
+</div>
+
+<!-- Add more ways to give -->
+<!-- Subscribe to our newsletter -->
+<script src="{% static 'cleanWater/script.js' %}"></script>
+{% endblock %}

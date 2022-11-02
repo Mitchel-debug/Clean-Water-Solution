@@ -1,0 +1,9 @@
+{% extends "cleanWater/layout.html" %}
+{% block body %}
+
+{% load static %}
+<h2>{{ art.title }}</h2>
+
+<img src="{{ art.image }}" alt="">
+<p>{{art.content }}</p>
+{% endblock %}

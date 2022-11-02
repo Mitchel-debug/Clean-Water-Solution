@@ -1,0 +1,23 @@
+{% extends "cleanWater/layout.html" %}
+{% block body %}
+
+{% load static %}
+
+<div class="container2">
+    <div class="row2">
+        {% for articles in Articles %}
+
+            <div class="card2">
+                <img class="card-img-top" src="{{ articles.image }}" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">{{ articles.title }}</h5>
+                <p class="card-text">{{ articles.briefDesc }}</p>
+                <a href="{% url 'articles' articles.id %}" id="lol" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
