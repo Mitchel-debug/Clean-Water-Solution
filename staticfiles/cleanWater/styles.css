@@ -64,6 +64,10 @@ body{
     align-self: normal;
 }
 
+#idek{
+    width: 100%;
+    
+}
 .card img{
     max-width: 200px;
     height: 200px;
