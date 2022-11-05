@@ -131,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 if os.getcwd() == "/app":
     DEBUG=False
+    
+    GOOGLE_API_KEY = "AIzaSyBu3o88ZXsrroHmf1PiFeWMSHhY9jo90oQ"
+BASE_COUNTRY = "US"

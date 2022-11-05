@@ -13,6 +13,9 @@ urlpatterns = [
     path("report", views.report, name="report"),
     path("articles", views.articles, name="articles"),
     path("about", views.about, name="about"),
+    path("route", views.route, name="route"),
+    path("map", views.map, name="map"),
+    path("profile", views.profile, name="profile"),
     path("articles/<str:articles_id>", views.showArticles, name="articles"),
 ]
 

@@ -32,6 +32,11 @@
 				<li class="nav-item px-3 active">
 				<a class="nav-link" href="{% url 'articles' %}">Resources</a>
 				</li>
+				{% if user.is_authenticated %}
+				<li class="nav-item px-3 active">
+				<a class="nav-link" href="{% url 'profile' %}">Update Profile</a>
+				</li>
+				{% endif %}
 				<!-- <li class="nav-item px-3 active">
 				<a class="nav-link" href="#">Rewards</a>
 				</li> -->
@@ -61,5 +66,10 @@
     {% block body %}
     
     {% endblock %}
+    {% block extend_footer %}
+    
+    {% endblock %}
+	<script src="{% static 'cleanWater/main.js' %}"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
 </body>
 </html>
