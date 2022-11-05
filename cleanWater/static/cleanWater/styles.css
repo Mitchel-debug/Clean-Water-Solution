@@ -75,6 +75,12 @@ body{
     max-width: 200px;
     height: 200px;
 }
+#idk4{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 .card2 h5{
     font-size: 1.3rem;
